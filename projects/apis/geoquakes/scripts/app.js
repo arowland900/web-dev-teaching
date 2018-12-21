@@ -5,17 +5,20 @@ var map;
 function fetchData() {
     axios.get(weekly_quakes_endpoint)
     .then(res => {
-        var allQuakes = res.data.features                           // create quakes variable, an array that holds all quake data
+        var allQuakes = res.data.features                               // create quakes variable, an array that holds all quake data
         console.log(allQuakes)
         allQuakes.forEach(q => {
-            var info = document.getElementById('info');             // create info variable
-            var node = document.createElement("P");                 // Create a <p> node
+            var info = document.getElementById('info');                 // create info variable
+            var node = document.createElement("P");                     // Create a <p> node
             var textnode = document.createTextNode(q.properties.title);         // Create a text node
-            node.appendChild(textnode);                            // Append the text to <p>
-            info.appendChild(node);                                // Append <p> to <div>
-            var coords = q.geometry.coordinates;
-            var latLng = new google.maps.LatLng(coords[1],coords[0]);
-            var marker = new google.maps.Marker({
+            node.appendChild(textnode);                                 // Append the text to <p>
+            info.appendChild(node);                                     // Append <p> to <div>
+
+            // -------------------------------------------------------------------------------------//
+            
+            var coords = q.geometry.coordinates;                        // create coordinates variable, by utilizing the google maps API  
+            var latLng = new google.maps.LatLng(coords[1],coords[0]);   // create latitude and longitude coordinate
+            var marker = new google.maps.Marker({                       // create marker coordinate. use marker coordinate to show latLng on map
                 position: latLng,
                 map: map,
                 icon: {

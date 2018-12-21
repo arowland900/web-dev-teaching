@@ -1,0 +1,21 @@
+<a href="/">HOME</a> | <a href="/posts">ALL POSTS</a> 
+
+<h1>ALL POSTS</h1>
+
+<table style="width: 100%">
+    <tr>
+        <th>Title</th>
+        <th>Body</th>
+    </tr>
+    <% apiResponse.data.forEach(i => { %>
+    <tr>
+        <td style="border: 1px solid black">
+            <%= i.title %>
+        </td>
+        <td style="border: 1px solid black">   
+            <%= i.body %>
+        </td>
+    </tr>
+    <% }) %>  
+
+</table>
