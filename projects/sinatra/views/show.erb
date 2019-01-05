@@ -9,6 +9,7 @@
 <body>
     <h1><%= student.name %> | <%= student.email %></h1>
     <a href="/students/<%= student.id %>/edit">Edit <%= student.name %></a>
+    <a href="/">Home</a>
     <%# DELETE FORM %>
     <form method="POST" action="/students/<%= student.id %>">
         <input type="hidden" name="_method" value="DELETE"/>
