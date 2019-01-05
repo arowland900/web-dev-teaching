@@ -20,3 +20,8 @@ put "/students/:id" do
 	redirect "/students#{params[:id]}"
 end
 
+post "/students" do
+	new_student = Student.new(params[:name], params[:email])
+	students.push(new_student)
+	redirect('/')
+end
