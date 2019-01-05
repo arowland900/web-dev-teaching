@@ -25,3 +25,8 @@ post "/students" do
 	students.push(new_student)
 	redirect('/')
 end
+
+get "/students/:id/edit" do 
+	student = students.select { |s| s.id == params[:id].to_i }
+	erb :edit, :locals => { :student => student[0] }
+end
