@@ -30,3 +30,8 @@ get "/students/:id/edit" do
 	student = students.select { |s| s.id == params[:id].to_i }
 	erb :edit, :locals => { :student => student[0] }
 end
+
+delete "/students/:id" do
+	students.delete_if { |s| s.id == params[:id].to_i }
+	redirect '/'
+end
