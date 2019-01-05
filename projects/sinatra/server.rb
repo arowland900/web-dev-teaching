@@ -5,7 +5,6 @@ require './lib/student.rb'
 students = []
 
 get '/' do
-    # erb :index
 	erb :index, :locals => { :students => students }
 end
 
@@ -20,3 +19,4 @@ put "/students/:id" do
 	student[0].email=params[:email]
 	redirect "/students#{params[:id]}"
 end
+
