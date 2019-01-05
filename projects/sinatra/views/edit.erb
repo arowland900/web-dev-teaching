@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edit Show</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <form method="POST" action="/students/<%= student.id %>">
+        <input type="hidden" name="_method" value="PUT">
+        <input name="name" value="<%= student.name %>">
+        <input name="email" value="<%= student.email %>">
+        <input type="submit" value="Edit Student">
+    </form>
+</body>
+</html>
