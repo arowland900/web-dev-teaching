@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+beans = Bean.create([
+    {name: "Kate's Kona Coffee", roast: "medium", origin: "Kona, Hawaii", quantity: 100},
+    {name: "Mike's Mocha", roast: "light", origin: "California", quantity: 100}
+  ])
