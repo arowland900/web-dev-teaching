@@ -8,4 +8,9 @@ class BeansController < ApplicationController
         @bean = Bean.find(params[:id])
     end
 
+    def new
+        @bean = Bean.new
+    end
+
+
 end
