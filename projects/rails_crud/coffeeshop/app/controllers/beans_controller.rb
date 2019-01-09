@@ -26,5 +26,15 @@ class BeansController < ApplicationController
         @bean = Bean.find(params[:id])
     end
 
+    def update
+        @bean = Bean.find(params[:id])
+
+        if @bean.update_attributes(params.require(:bean).permit(:name, :roast, :origin, :quantity))
+            redirect_to beans_path
+        else
+            render :edit
+        end
+    end
+
 
 end

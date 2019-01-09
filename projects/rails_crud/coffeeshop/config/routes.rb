@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 	get "beans/:id" => "beans#show", as: :bean
 	post "beans/" => "beans#create"
 	get "beans/:id/edit" => "beans#edit", as: :edit_bean
+	patch "beans/:id" => "beans#update"
+
 end
